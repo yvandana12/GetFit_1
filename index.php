@@ -25,7 +25,7 @@
       </div>
     </div> <!-- End Video Background -->
 
-    <div class="container-fluid bg-danger txt-banner"> <!-- Start Text Banner -->
+    <div class="container-fluid bg-secondary txt-banner"> <!-- Start Text Banner -->
         <div class="row bottom-banner">
           <div class="col-sm">
             <h5> <i class="fas fa-book-open mr-3"></i> 100+ Online Courses</h5>
