@@ -1,14 +1,14 @@
 $(document).ready(function() {
   // Ajax Call for Already Exists Email Verification
-  $("#stuemail").on("keypress blur", function() {
+  $("#buyeremail").on("keypress blur", function() {
     var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    var stuemail = $("#stuemail").val();
+    var buyeremail = $("#buyeremail").val();
     $.ajax({
-      url: "Student/addstudent.php",
+      url: "Buyer/addBuyer.php",
       type: "post",
       data: {
         checkemail: "checkmail",
-        stuemail: stuemail
+        buyeremail: buyeremail
       },
       success: function(data) {
         console.log(data);
@@ -17,18 +17,18 @@ $(document).ready(function() {
             '<small style="color:red;"> Email ID Already Registered ! </small>'
           );
           $("#signup").attr("disabled", true);
-        } else if (data == 0 && reg.test(stuemail)) {
+        } else if (data == 0 && reg.test(buyeremail)) {
           $("#statusMsg2").html(
             '<small style="color:green;"> There you go ! </small>'
           );
           $("#signup").attr("disabled", false);
-        } else if (!reg.test(stuemail)) {
+        } else if (!reg.test(buyeremail)) {
           $("#statusMsg2").html(
             '<small style="color:red;"> Please Enter Valid Email e.g. example@mail.com </small>'
           );
           $("#signup").attr("disabled", false);
         }
-        if (stuemail == "") {
+        if (buyeremail == "") {
           $("#statusMsg2").html(
             '<small style="color:red;"> Please Enter Email ! </small>'
           );
@@ -37,16 +37,16 @@ $(document).ready(function() {
     });
   });
   // Checking name on keypress
-  $("#stuname").keypress(function() {
-    var stuname = $("#stuname").val();
-    if (stuname !== "") {
+  $("#buyername").keypress(function() {
+    var buyername = $("#buyername").val();
+    if (buyername !== "") {
       $("#statusMsg1").html(" ");
     }
   });
   // Checking Password on keypress
-  $("#stupass").keypress(function() {
-    var stupass = $("#stupass").val();
-    if (stupass !== "") {
+  $("#buyerpass").keypress(function() {
+    var buyerpass = $("#buyerpass").val();
+    if (buyerpass !== "") {
       $("#statusMsg3").html(" ");
     }
   });
@@ -55,44 +55,44 @@ $(document).ready(function() {
 // Ajax Call for Adding New Student
 function addStu() {
   var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-  var stuname = $("#stuname").val();
-  var stuemail = $("#stuemail").val();
-  var stupass = $("#stupass").val();
+  var buyername = $("#buyername").val();
+  var buyeremail = $("#buyeremail").val();
+  var buyerpass = $("#buyerpass").val();
   // checking fields on form submission
-  if (stuname.trim() == "") {
+  if (buyername.trim() == "") {
     $("#statusMsg1").html(
       '<small style="color:red;"> Please Enter Name ! </small>'
     );
-    $("#stuname").focus();
+    $("#buyername").focus();
     return false;
-  } else if (stuemail.trim() == "") {
+  } else if (buyeremail.trim() == "") {
     $("#statusMsg2").html(
       '<small style="color:red;"> Please Enter Email ! </small>'
     );
-    $("#stuemail").focus();
+    $("#buyeremail").focus();
     return false;
-  } else if (stuemail.trim() != "" && !reg.test(stuemail)) {
+  } else if (buyeremail.trim() != "" && !reg.test(buyeremail)) {
     $("#statusMsg2").html(
       '<small style="color:red;"> Please Enter Valid Email e.g. example@mail.com </small>'
     );
-    $("#stuemail").focus();
+    $("#buyeremail").focus();
     return false;
-  } else if (stupass.trim() == "") {
+  } else if (buyerpass.trim() == "") {
     $("#statusMsg3").html(
       '<small style="color:red;"> Please Enter Password ! </small>'
     );
-    $("#stupass").focus();
+    $("#buyerpass").focus();
     return false;
   } else {
     $.ajax({
-      url: "Student/addstudent.php",
+      url: "Buyer/addBuyer.php",
       type: "post",
       data: {
         // assigned stusignup value just to check all iz well
-        stusignup: "stusignup",
-        stuname: stuname,
-        stuemail: stuemail,
-        stupass: stupass
+        buyersignup: "buyersignup",
+        buyername: buyername,
+        buyeremail: buyeremail,
+        buyerpass: buyerpass
       },
       success: function(data) {
         console.log(data);
@@ -101,7 +101,7 @@ function addStu() {
             '<span class="alert alert-success"> Registration Successful ! </span>'
           );
           // making field empty after signup
-          clearStuRegField();
+          clearBuyerRegField();
         } else if (data == "Failed") {
           $("#successMsg").html(
             '<span class="alert alert-danger"> Unable to Register ! </span>'
@@ -113,29 +113,29 @@ function addStu() {
 }
 
 // Empty All Fields and Status Msg
-function clearStuRegField() {
-  $("#stuRegForm").trigger("reset");
+function clearBuyerRegField() {
+  $("#buyerRegForm").trigger("reset");
   $("#statusMsg1").html(" ");
   $("#statusMsg2").html(" ");
   $("#statusMsg3").html(" ");
 }
 
-function clearAllStuReg() {
+function clearAllBuyerReg() {
   $("#successMsg").html(" ");
-  clearStuRegField();
+  clearBuyerRegField();
 }
 
-// Ajax Call for Student Login Verification
-function checkStuLogin() {
-  var stuLogEmail = $("#stuLogEmail").val();
-  var stuLogPass = $("#stuLogPass").val();
+// Ajax Call for Buyer Login Verification
+function checkBuyerLogin() {
+  var buyerLogEmail = $("#buyerLogEmail").val();
+  var buyerLogPass = $("#buyerLogPass").val();
   $.ajax({
-    url: "Student/addstudent.php",
+    url: "Buyer/addBuyer.php",
     type: "post",
     data: {
       checkLogemail: "checklogmail",
-      stuLogEmail: stuLogEmail,
-      stuLogPass: stuLogPass
+      buyerLogEmail: buyerLogEmail,
+      buyerLogPass: buyerLogPass
     },
     success: function(data) {
       console.log(data);
@@ -148,7 +148,7 @@ function checkStuLogin() {
           '<div class="spinner-border text-success" role="status"></div>'
         );
         // Empty Login Fields
-        clearStuLoginField();
+        clearBuyerLoginField();
         setTimeout(() => {
           window.location.href = "index.php";
         }, 1000);
@@ -158,12 +158,12 @@ function checkStuLogin() {
 }
 
 // Empty Login Fields
-function clearStuLoginField() {
-  $("#stuLoginForm").trigger("reset");
+function clearBuyerLoginField() {
+  $("#buyerLoginForm").trigger("reset");
 }
 
 // Empty Login Fields and Status Msg
-function clearStuLoginWithStatus() {
+function clearBuyerLoginWithStatus() {
   $("#statusLogMsg").html(" ");
-  clearStuLoginField();
+  clearBuyerLoginField();
 }

@@ -13,12 +13,12 @@
         </div> <!-- End Contact Us 1st Column-->
 
         <div class="col-md-4 stripe text-white text-center">  <!-- Start Contact Us 2nd Column-->
-          <h4>iSchool</h4>
-          <p>iSchool, 
-          Near Police Camp II, Bokaro, 
-          Jharkhand - 834005<br /> 
+          <h4>GetFit</h4>
+          <p>GetFit, 
+          Sector 24, Rohini, 
+          Delhi - 834005<br /> 
           Phone: +00000000 <br />
-          www.ischool.com </p>
+          www.getfit.com </p>
         </div> <!-- End Contact Us 2nd Column-->
       </div> <!-- End Contact Us Row-->
     </div> <!-- End Contact Us Container-->

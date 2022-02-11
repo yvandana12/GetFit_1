@@ -13,12 +13,13 @@
       </div>
       <div class="vid-content" >
         <h1 class="my-content">Welcome to GetFit</h1>
-        <small class="my-content">Learn and Implement</small><br />
+        <small class="my-content" style="color:blue;">To keep the body in good health is a duty...</small><br />
+        <small class="my-content" style="color:blue;">Otherwise we shall not be able to keep our mind strong and clear...</small><br />
         <?php    
               if(!isset($_SESSION['is_login'])){
-                echo '<a class="btn  mt-3" href="#" data-toggle="modal" data-target="#stuRegModalCenter">Get Started</a>';
+                echo '<a class="btn btn-danger mt-3" href="#" data-toggle="modal" data-target="#buyerRegModalCenter">Get Started</a>';
               } else {
-                echo '<a class="btn  mt-3" href="student/studentProfile.php">My Profile</a>';
+                echo '<a class="btn btn-primary mt-3" href="buyer/buyerProfile.php">My Profile</a>';
               }
           ?> 
        
@@ -104,17 +105,17 @@
 
      <!-- Start Students Testimonial -->
       <div class="container-fluid mt-5" style="background-color: #4B7289" id="Feedback">
-        <h1 class="text-center testyheading p-4"> Student's Feedback </h1>
+        <h1 class="text-center testyheading p-4"> Buyer's Feedback </h1>
         <div class="row">
           <div class="col-md-12">
             <div id="testimonial-slider" class="owl-carousel">
             <?php 
-              $sql = "SELECT s.stu_name, s.stu_occ, s.stu_img, f.f_content FROM student AS s JOIN feedback AS f ON s.stu_id = f.stu_id";
+              $sql = "SELECT b.buyer_name, b.buyer_occ, b.buyer_img, f.f_content FROM buyer AS b JOIN feedback AS f ON b.buyer_id = f.buyer_id";
               $result = $conn->query($sql);
               if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()){
-                  $s_img = $row['stu_img'];
-                  $n_img = str_replace('../','',$s_img)
+                  $b_img = $row['buyer_img'];
+                  $n_img = str_replace('../','',$b_img)
             ?>
               <div class="testimonial">
                 <p class="description">
@@ -124,8 +125,8 @@
                   <img src="<?php echo $n_img; ?>" alt=""/>
                 </div>
                 <div class="testimonial-prof">
-                  <h4><?php echo $row['stu_name']; ?></h4>
-                  <small><?php echo $row['stu_occ']; ?></small>
+                  <h4><?php echo $row['buyer_name']; ?></h4>
+                  <small><?php echo $row['buyer_occ']; ?></small>
                 </div>
               </div>
               <?php }} ?>
@@ -157,7 +158,7 @@
         <div class="row text-center">
           <div class="col-sm">
             <h5>About Us</h5>
-              <p>iSchool provides universal access to the world’s best education, partnering with top universities and organizations to offer courses online.</p>
+              <p>GetFit provides universal access to the best fitness and diet programs online.</p>
           </div>
           <div class="col-sm">
             <h5>Category</h5>
@@ -169,7 +170,7 @@
           </div>
           <div class="col-sm">
             <h5>Contact Us</h5>
-            <p>iSchool Pvt Ltd <br> Near Police Camp II <br> Bokaro, Jharkhand <br> Ph. 000000000 </p>
+            <p>GetFit Pvt Ltd <br> Sector 24 <br> Rohini, Delhi <br> Ph. 000000000 </p>
           </div>
         </div>
       </div>

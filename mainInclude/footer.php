@@ -1,6 +1,6 @@
  <!-- Start Footer -->
  <footer class="container-fluid bg-dark text-center p-2">
-    <small class="text-white">Copyright &copy; 2019 || Designed By E-Learning || <?php   
+    <small class="text-white">Copyright &copy; 2019 || Designed By GetFit || <?php   
           if (isset($_SESSION['is_admin_login'])){
             echo '<a href="admin/adminDashboard.php"> Admin Dashboard</a> <a href="logout.php">Logout</a>';
           }else {
@@ -11,60 +11,60 @@
   
  </footer> <!-- End Footer -->
 
-    <!-- Start Student Registration Modal -->
-    <div class="modal fade" id="stuRegModalCenter" tabindex="-1" role="dialog" aria-labelledby="stuRegModalCenterTitle" aria-hidden="true">
+    <!-- Start Buyer Registration Modal -->
+    <div class="modal fade" id="buyerRegModalCenter" tabindex="-1" role="dialog" aria-labelledby="buyerRegModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="stuRegModalCenterTitle">Student Registration</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAllStuReg()">
+            <h5 class="modal-title" id="buyerRegModalCenterTitle">Buyer Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAllBuyerReg()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <!--Start Form Registration-->
-            <?php include('studentRegistration.php'); ?>
+            <?php include('buyerRegistration.php'); ?>
             <!-- End Form Registration -->
           </div>
           <div class="modal-footer">
             <span id="successMsg"></span>
-            <button type="button" class="btn btn-primary" id="signup" onclick="addStu()">Sign Up</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearAllStuReg()">Close</button>
+            <button type="button" class="btn btn-primary" id="signup" onclick="addBuyer()">Sign Up</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearAllBuyerReg()">Close</button>
           </div>
         </div>
       </div>
-    </div> <!-- End Student Registration Modal -->
+    </div> <!-- End Buyer Registration Modal -->
 
 
-    <!-- Start Student Login Modal -->
-    <div class="modal fade" id="stuLoginModalCenter" tabindex="-1" role="dialog" aria-labelledby="stuLoginModalCenterTitle" aria-hidden="true">
+    <!-- Start Buyer Login Modal -->
+    <div class="modal fade" id="buyerLoginModalCenter" tabindex="-1" role="dialog" aria-labelledby="buyerLoginModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="stuLoginModalCenterTitle">Student Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearStuLoginWithStatus()">
+            <h5 class="modal-title" id="buyerLoginModalCenterTitle">Buyer Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearBuyerLoginWithStatus()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form role="form" id="stuLoginForm">
+            <form role="form" id="buyerLoginForm">
               <div class="form-group">
-                <i class="fas fa-envelope"></i><label for="stuLogEmail" class="pl-2 font-weight-bold">Email</label><small id="statusLogMsg1"></small><input type="email"
-                    class="form-control" placeholder="Email" name="stuLogEmail" id="stuLogEmail">
+                <i class="fas fa-envelope"></i><label for="buyerLogEmail" class="pl-2 font-weight-bold">Email</label><small id="statusLogMsg1"></small><input type="email"
+                    class="form-control" placeholder="Email" name="buyerLogEmail" id="buyerLogEmail">
                 </div>
                 <div class="form-group">
-                  <i class="fas fa-key"></i><label for="stuLogPass" class="pl-2 font-weight-bold">Password</label><input type="password" class="form-control" placeholder="Password" name="stuLogPass" id="stuLogPass">
+                  <i class="fas fa-key"></i><label for="buyerLogPass" class="pl-2 font-weight-bold">Password</label><input type="password" class="form-control" placeholder="Password" name="buyerLogPass" id="buyerLogPass">
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <small id="statusLogMsg"></small>
-            <button type="button" class="btn btn-primary" id="stuLoginBtn" onclick="checkStuLogin()">Login</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="clearStuLoginWithStatus()">Cancel</button>
+            <button type="button" class="btn btn-primary" id="buyerLoginBtn" onclick="checkBuyerLogin()">Login</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="clearBuyerLoginWithStatus()">Cancel</button>
           </div>
         </div>
       </div>
-    </div> <!-- End Student Login Modal -->
+    </div> <!-- End Buyer Login Modal -->
 
 
   <!-- Start Admin Login Modal -->
