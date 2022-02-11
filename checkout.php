@@ -1,10 +1,17 @@
 <?php 
 include('./dbConnection.php');
 session_start();
+<<<<<<< HEAD
  if(!isset($_SESSION['buyerLogEmail'])) {
   echo "<script> location.href='loginorsignup.php'; </script>";
  } else {
   $buyerEmail = $_SESSION['buyerLogEmail'];
+=======
+ if(!isset($_SESSION['stuLogEmail'])) {
+  echo "<script> location.href='loginorsignup.php'; </script>";
+ } else {
+  $stuEmail = $_SESSION['stuLogEmail'];
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -30,8 +37,13 @@ session_start();
   <div class="container mt-5">
     <div class="row">
     <div class="col-sm-6 offset-sm-3 jumbotron">
+<<<<<<< HEAD
     <h3 class="mb-5">Welcome to GetFit Payment Page</h3>
     <form method="post" action="./paymentdone.php" id="myform">
+=======
+    <h3 class="mb-5">Welcome to E-Learning Payment Page</h3>
+    <form method="post" action="./paymentdone.php">
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
       <div class="form-group row">
        <label for="ORDER_ID" class="col-sm-4 col-form-label">Order ID</label>
        <div class="col-sm-8">
@@ -40,9 +52,15 @@ session_start();
        </div>
       </div>
       <div class="form-group row">
+<<<<<<< HEAD
        <label for="CUST_ID" class="col-sm-4 col-form-label">Buyer Email</label>
        <div class="col-sm-8">
          <input id="CUST_ID" class="form-control" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="<?php if(isset($buyerEmail)){echo $buyerEmail; }?>" readonly>
+=======
+       <label for="CUST_ID" class="col-sm-4 col-form-label">Student Email</label>
+       <div class="col-sm-8">
+         <input id="CUST_ID" class="form-control" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="<?php if(isset($stuEmail)){echo $stuEmail; }?>" readonly>
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
        </div>
       </div>
       <div class="form-group row">
@@ -53,15 +71,21 @@ session_start();
        </div>
       </div>
       <div class="text-center">
+<<<<<<< HEAD
         <!-- Set up a container element for the button -->
         <div id="paypal-button-container"></div>
         <a href="./courses.php" class="btn btn-secondary">Cancel</a>
+=======
+       <input value="Check out" type="submit"	class="btn btn-primary" onclick="">
+       <a href="./courses.php" class="btn btn-secondary">Cancel</a>
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
       </div>
      </form>
      <small class="form-text text-muted">Note: Complete Payment by Clicking Checkout Button</small>
      </div>
     </div>
   </div>
+<<<<<<< HEAD
   <!-- Include the PayPal JavaScript SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 
@@ -92,6 +116,9 @@ session_start();
 
       }).render('#paypal-button-container');
   </script>
+=======
+
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
     <!-- Jquery and Boostrap JavaScript -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -107,3 +134,7 @@ session_start();
   </html>
  <?php } ?>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51

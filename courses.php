@@ -5,12 +5,16 @@
 ?>  
     <div class="container-fluid bg-dark"> <!-- Start Course Page Banner -->
       <div class="row">
-        <img src="./image/coursebanner.jpg" alt="courses" style="height:500px; width:100%; object-fit:cover; box-shadow:10px;"/>
+
+        <img src="./image/programbanner2.jpg" alt="courses" style="height:500px; width:100%; object-fit:cover; box-shadow:10px;"/>
+
       </div> 
     </div> <!-- End Course Page Banner -->
 
     <div class="container mt-5"> <!-- Start All Course -->
+
       <h1 class="text-center">All Courses</h1>
+
       <div class="row mt-4"> <!-- Start All Course Row -->
       <?php
           $sql = "SELECT * FROM course";
@@ -38,10 +42,6 @@
         </div><!-- End All Course Row -->   
       </div><!-- End All Course -->   
      
-<?php 
-  // Contact Us
-  include('./contact.php'); 
-?> 
 
 <?php 
   // Footer Include from mainInclude 

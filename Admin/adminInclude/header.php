@@ -25,7 +25,9 @@
 <body>
  <!-- Top Navbar -->
  <nav class="navbar navbar-dark fixed-top p-0 shadow" style="background-color: #225470;">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="adminDashboard.php">E-Learning <small class="text-white">Admin Area</small></a> 
+
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="adminDashboard.php">GetFit <small class="text-white">Admin Area</small></a> 
+
  </nav>
 
  <!-- Side Bar -->
@@ -43,19 +45,23 @@
       <li class="nav-item">
        <a class="nav-link <?php if(PAGE == 'courses') {echo 'active';} ?>" href="courses.php">
         <i class="fab fa-accessible-icon"></i>
-        Courses
+
+        Programs
+
        </a>
       </li>
       <li class="nav-item">
        <a class="nav-link <?php if(PAGE == 'lessons') {echo 'active';} ?>" href="lessons.php">
         <i class="fab fa-accessible-icon"></i>
+
         Lessons
        </a>
       </li>
       <li class="nav-item">
        <a class="nav-link <?php if(PAGE == 'buyers') {echo 'active';} ?>" href="buyers.php">
         <i class="fas fa-users"></i>
-        Students
+        Buyers
+
        </a>
       </li>
       <li class="nav-item">
@@ -73,7 +79,8 @@
       <li class="nav-item">
        <a class="nav-link <?php if(PAGE == 'feedback') {echo 'active';} ?>" href="feedback.php">
         <i class="fab fa-accessible-icon"></i>
-        Feedback
+
+        All Feedback
        </a>
       </li>
       <li class="nav-item">

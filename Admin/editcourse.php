@@ -16,7 +16,9 @@ include('../dbConnection.php');
  // Update
  if(isset($_REQUEST['requpdate'])){
   // Checking for Empty Fields
+
   if(($_REQUEST['course_id'] == "") || ($_REQUEST['course_name'] == "") || ($_REQUEST['course_desc'] == "") || ($_REQUEST['course_instructor'] == "") || ($_REQUEST['course_duration'] == "") || ($_REQUEST['course_price'] == "") || ($_REQUEST['course_original_price'] == "")){
+
    // msg displayed if required field missing
    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
@@ -24,13 +26,16 @@ include('../dbConnection.php');
     $cid = $_REQUEST['course_id'];
     $cname = $_REQUEST['course_name'];
     $cdesc = $_REQUEST['course_desc'];
+
     $cinstructor = $_REQUEST['course_instructor'];
+
     $cduration = $_REQUEST['course_duration'];
     $cprice = $_REQUEST['course_price'];
     $coriginalprice = $_REQUEST['course_original_price'];
     $cimg = '../image/courseimg/'. $_FILES['course_img']['name'];
-    
+ 
    $sql = "UPDATE course SET course_id = '$cid', course_name = '$cname', course_desc = '$cdesc', course_instructor='$cinstructor', course_duration='$cduration', course_price='$cprice', course_original_price='$coriginalprice', course_img='$cimg' WHERE course_id = '$cid'";
+
     if($conn->query($sql) == TRUE){
      // below msg display on form submit success
      $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Updated Successfully </div>';
@@ -66,8 +71,10 @@ include('../dbConnection.php');
       <textarea class="form-control" id="course_desc" name="course_desc" row=2><?php if(isset($row['course_desc'])) {echo $row['course_desc']; }?></textarea>
     </div>
     <div class="form-group">
-      <label for="course_instructor">Author</label>
+
+      <label for="course_instructor">Instructor</label>
       <input type="text" class="form-control" id="course_instructor" name="course_instructor" value="<?php if(isset($row['course_instructor'])) {echo $row['course_instructor']; }?>">
+
     </div>
     <div class="form-group">
       <label for="course_duration">Course Duration</label>

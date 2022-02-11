@@ -43,7 +43,11 @@ include('../dbConnection.php');
           <tr>
             <th scope="col">Order ID</th>
             <th scope="col">Course ID</th>
+<<<<<<< HEAD
             <th scope="col">Buyer Email</th>
+=======
+            <th scope="col">Student Email</th>
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
             <th scope="col">Payment Status</th>
             <th scope="col">order Date</th>
             <th scope="col">Amount</th>
@@ -54,7 +58,11 @@ include('../dbConnection.php');
           echo '<tr>
             <th scope="row">'.$row["order_id"].'</th>
             <td>'.$row["course_id"].'</td>
+<<<<<<< HEAD
             <td>'.$row["buyer_email"].'</td>
+=======
+            <td>'.$row["stu_email"].'</td>
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
             <td>'.$row["status"].'</td>
             <td>'.$row["order_date"].'</td>
             <td>'.$row["amount"].'</td>

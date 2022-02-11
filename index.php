@@ -29,7 +29,7 @@
     <div class="container-fluid bg-secondary txt-banner"> <!-- Start Text Banner -->
         <div class="row bottom-banner">
           <div class="col-sm">
-            <h5> <i class="fas fa-book-open mr-3"></i> 100+ Online Courses</h5>
+            <h5> <i class="fas fa-book-open mr-3"></i> 100+ Online programs</h5>
           </div>
           <div class="col-sm">
             <h5><i class="fas fa-users mr-3"></i> Expert Instructors</h5>
@@ -69,7 +69,8 @@
         }
         ?>   
       </div>  <!-- End Most Popular Course 1st Card Deck -->   
-      <div class="card-deck mt-4"> <!-- Start Most Popular Course 2nd Card Deck -->
+      <!-- Start Most Popular Course 2nd Card Deck -->
+      <!-- <div class="card-deck mt-4"> 
         <?php
           $sql = "SELECT * FROM course LIMIT 3,3";
           $result = $conn->query($sql);
@@ -85,16 +86,18 @@
                       <p class="card-text">'.$row['course_desc'].'</p>
                     </div>
                     <div class="card-footer">
-                      <p class="card-text d-inline">Price: <small><del>&#8377 '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">&#8377 '.$row['course_price'].'<span></p> <a class="btn btn-primary text-white font-weight-bolder float-right" href="#">Enroll</a>
+                      <p class="card-text d-inline">Price: <small><del>&#8377 '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">&#8377 '.$row['course_price'].'<span></p> <a class="btn btn-secondary
+                       text-white font-weight-bolder float-right" href="#">Enroll</a>
                     </div>
                   </div>
                 </a>  ';
             }
           }
         ?>
-      </div>   <!-- End Most Popular Course 2nd Card Deck --> 
+      </div>    -->
+      <!-- End Most Popular Course 2nd Card Deck --> 
       <div class="text-center m-2">
-        <a class="btn btn-danger btn-sm" href="courses.php">View All Course</a> 
+        <a class="btn btn-secondary " href="courses.php">View All Course</a> 
       </div>
     </div>  <!-- End Most Popular Course -->
 
@@ -104,8 +107,11 @@
     ?>  
 
      <!-- Start Students Testimonial -->
+
       <div class="container-fluid mt-5" style="background-color: #4B7289" id="Feedback">
         <h1 class="text-center testyheading p-4"> Buyer's Feedback </h1>
+
+      
         <div class="row">
           <div class="col-md-12">
             <div id="testimonial-slider" class="owl-carousel">
@@ -135,7 +141,7 @@
         </div>
     </div>  <!-- End Students Testimonial -->
 
-    <div class="container-fluid bg-danger"> <!-- Start Social Follow -->
+    <div class="container-fluid bg-primary"> <!-- Start Social Follow -->
         <div class="row text-white text-center p-1">
           <div class="col-sm">
             <a class="text-white social-hover" href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
@@ -158,19 +164,20 @@
         <div class="row text-center">
           <div class="col-sm">
             <h5>About Us</h5>
-              <p>GetFit provides universal access to the best fitness and diet programs online.</p>
+
+              
+              <p>GetFit provides universal access to the world’s best Fitness guidance, partnering with top instructors to offer programs online.</p>
+
           </div>
           <div class="col-sm">
             <h5>Category</h5>
-            <a class="text-dark" href="#">Web Development</a><br />
-            <a class="text-dark" href="#">Web Designing</a><br />
-            <a class="text-dark" href="#">Android App Dev</a><br />
-            <a class="text-dark" href="#">iOS Development</a><br />
-            <a class="text-dark" href="#">Data Analysis</a><br />
+            <a class="text-dark" href="#">Workout Programs</a><br />
+            <a class="text-dark" href="#">Diet Programs</a><br />
           </div>
           <div class="col-sm">
             <h5>Contact Us</h5>
-            <p>GetFit Pvt Ltd <br> Sector 24 <br> Rohini, Delhi <br> Ph. 000000000 </p>
+        <p>Send us an email</p>
+
           </div>
         </div>
       </div>

@@ -14,14 +14,18 @@ include('../dbConnection.php');
  }
  if(isset($_REQUEST['courseSubmitBtn'])){
   // Checking for Empty Fields
+
   if(($_REQUEST['course_name'] == "") || ($_REQUEST['course_desc'] == "") || ($_REQUEST['course_instructor'] == "") || ($_REQUEST['course_duration'] == "") || ($_REQUEST['course_price'] == "") || ($_REQUEST['course_original_price'] == "")){
+
    // msg displayed if required field missing
    $msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2" role="alert"> Fill All Fileds </div>';
   } else {
    // Assigning User Values to Variable
    $course_name = $_REQUEST['course_name'];
    $course_desc = $_REQUEST['course_desc'];
+
    $course_instructor = $_REQUEST['course_instructor'];
+
    $course_duration = $_REQUEST['course_duration'];
    $course_price = $_REQUEST['course_price'];
    $course_original_price = $_REQUEST['course_original_price'];
@@ -29,7 +33,9 @@ include('../dbConnection.php');
    $course_image_temp = $_FILES['course_img']['tmp_name'];
    $img_folder = '../image/courseimg/'. $course_image; 
    move_uploaded_file($course_image_temp, $img_folder);
+
     $sql = "INSERT INTO course (course_name, course_desc, course_instructor, course_img, course_duration, course_price, course_original_price) VALUES ('$course_name', '$course_desc','$course_instructor', '$img_folder', '$course_duration', '$course_price', '$course_original_price')";
+
     if($conn->query($sql) == TRUE){
      // below msg display on form submit success
      $msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Course Added Successfully </div>';
@@ -52,8 +58,10 @@ include('../dbConnection.php');
       <textarea class="form-control" id="course_desc" name="course_desc" row=2></textarea>
     </div>
     <div class="form-group">
+
       <label for="course_instructor">Author</label>
       <input type="text" class="form-control" id="course_instructor" name="course_instructor">
+
     </div>
     <div class="form-group">
       <label for="course_duration">Course Duration</label>

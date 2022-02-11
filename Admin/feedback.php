@@ -25,7 +25,9 @@ include('../dbConnection.php');
         <tr>
          <th scope="col">Feedback ID</th>
          <th scope="col">Content</th>
+
          <th scope="col">Buyer ID</th>
+
          <th scope="col">Action</th>
         </tr>
        </thead>
@@ -34,7 +36,9 @@ include('../dbConnection.php');
           echo '<tr>';
           echo '<th scope="row">'.$row["f_id"].'</th>';
           echo '<td>'. $row["f_content"].'</td>';
+
           echo '<td>'.$row["buyer_id"].'</td>';
+
           echo '<td><form action="" method="POST" class="d-inline"><input type="hidden" name="id" value='. $row["f_id"] .'><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></form></td>
          </tr>';
         }

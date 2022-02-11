@@ -20,6 +20,7 @@ $totalcourse = $result->num_rows;
  $result = $conn->query($sql);
  $totalBuyer = $result->num_rows;
 
+
  $sql = "SELECT * FROM courseorder";
  $result = $conn->query($sql);
  $totalsold = $result->num_rows;
@@ -39,12 +40,14 @@ $totalcourse = $result->num_rows;
       </div>
       <div class="col-sm-4 mt-5">
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+
           <div class="card-header">Buyers</div>
           <div class="card-body">
             <h4 class="card-title">
               <?php echo $totalBuyer; ?>
             </h4>
             <a class="btn text-white" href="buyers.php">View</a>
+
           </div>
         </div>
       </div>
@@ -72,7 +75,9 @@ $totalcourse = $result->num_rows;
     <tr>
       <th scope="col">Order ID</th>
       <th scope="col">Course ID</th>
+
       <th scope="col">Buyer Email</th>
+
       <th scope="col">Order Date</th>
       <th scope="col">Amount</th>
       <th scope="col">Action</th>
@@ -83,7 +88,9 @@ $totalcourse = $result->num_rows;
     echo '<tr>';
       echo '<th scope="row">'.$row["order_id"].'</th>';
       echo '<td>'. $row["course_id"].'</td>';
+
       echo '<td>'.$row["buyer_email"].'</td>';
+
       echo '<td>'.$row["order_date"].'</td>';
       echo '<td>'.$row["amount"].'</td>';
       echo '<td><form action="" method="POST" class="d-inline"><input type="hidden" name="id" value='. $row["co_id"] .'><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></form></td>';

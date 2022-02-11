@@ -16,8 +16,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
+<<<<<<< HEAD
             <h5 class="modal-title" id="buyerRegModalCenterTitle">Buyer Registration</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAllBuyerReg()">
+=======
+            <h5 class="modal-title" id="stuRegModalCenterTitle">Client Registration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAllStuReg()">
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
               <span aria-hidden="true">&times;</span>
             </button>
           </div>

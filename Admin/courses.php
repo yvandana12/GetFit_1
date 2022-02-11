@@ -26,7 +26,11 @@ include('../dbConnection.php');
         <tr>
          <th scope="col">Course ID</th>
          <th scope="col">Name</th>
+<<<<<<< HEAD
          <th scope="col">Instructor</th>
+=======
+         <th scope="col">Author</th>
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
          <th scope="col">Action</th>
         </tr>
        </thead>
@@ -35,7 +39,11 @@ include('../dbConnection.php');
           echo '<tr>';
           echo '<th scope="row">'.$row["course_id"].'</th>';
           echo '<td>'. $row["course_name"].'</td>';
+<<<<<<< HEAD
           echo '<td>'.$row["course_instructor"].'</td>';
+=======
+          echo '<td>'.$row["course_author"].'</td>';
+>>>>>>> c2a6801f78457e0a09687dce2efc0d5b74ce9a51
           echo '<td><form action="editcourse.php" method="POST" class="d-inline"> <input type="hidden" name="id" value='. $row["course_id"] .'><button type="submit" class="btn btn-info mr-3" name="view" value="View"><i class="fas fa-pen"></i></button></form>  
           <form action="" method="POST" class="d-inline"><input type="hidden" name="id" value='. $row["course_id"] .'><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></form></td>
          </tr>';
