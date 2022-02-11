@@ -1,6 +1,6 @@
  <!-- Start Footer -->
  <footer class="container-fluid bg-dark text-center p-2">
-    <small class="text-white">Copyright &copy; 2019 || Designed By E-Learning || <?php   
+    <small class="text-white">Copyright &copy; 2019 || Designed By GetFit || <?php   
           if (isset($_SESSION['is_admin_login'])){
             echo '<a href="admin/adminDashboard.php"> Admin Dashboard</a> <a href="logout.php">Logout</a>';
           }else {
@@ -16,7 +16,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="stuRegModalCenterTitle">Student Registration</h5>
+            <h5 class="modal-title" id="stuRegModalCenterTitle">Client Registration</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearAllStuReg()">
               <span aria-hidden="true">&times;</span>
             </button>
